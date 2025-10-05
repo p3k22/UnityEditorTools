@@ -1,0 +1,11 @@
+{
+  "name": "com.p3k.unityeditortools",
+  "version": "1.0.0",
+  "displayName": "Unity Editor Tools",
+  "description": "",
+  "unity": "2020.1",
+  "documentationUrl": "https://github.com/p3k22/UnityEditorTools#readme",
+  "author": {
+    "name": "P3k"
+  }
+}
