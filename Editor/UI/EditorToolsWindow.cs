@@ -307,7 +307,7 @@
             GUILayout.Label("Primary actions wrap automatically", _headerSubLabel);
             GUILayout.Space(6f);
 
-            var anySelected = _selectedScriptItems.Values.Any(v => v);
+            var anySelected = _selectedScriptItems.Values.Any(v => v) || _selectedItems.Values.Any(v => v);
 
             var buttonDefs = new List<Action>
                                 {
@@ -587,8 +587,8 @@
                return scriptFolder;
             }
 
-            var folder = _selectedItems.Where(kv => kv.Value).Select(kv => kv.Key).OrderBy(p => p.Count(c => c == '/'))
-               .LastOrDefault();
+            // Get the first selected folder (not the deepest)
+            var folder = _selectedItems.Where(kv => kv.Value).Select(kv => kv.Key).FirstOrDefault();
 
             if (!string.IsNullOrEmpty(folder))
             {
